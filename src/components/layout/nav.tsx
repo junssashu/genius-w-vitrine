@@ -52,9 +52,11 @@ export const Nav = () => {
           <div className="flex items-center gap-2 lg:gap-3">
             <LangToggle />
             <ThemeToggle />
-            <Button href="/contact" variant="ghost" className="hidden xl:inline-flex">
-              {t.cta.bookAppointment}
-            </Button>
+            <span className="hidden xl:inline-flex">
+              <Button href="/contact" variant="ghost">
+                {t.cta.bookAppointment}
+              </Button>
+            </span>
             <button
               type="button"
               aria-expanded={open}
