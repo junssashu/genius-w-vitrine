@@ -61,9 +61,9 @@ export const Nav = () => {
               aria-controls="mobile-nav"
               aria-label={open ? t.common.menuClose : t.common.menuOpen}
               onClick={() => setOpen((v) => !v)}
-              className="lg:hidden inline-flex items-center justify-center h-11 w-11 rounded-full border border-ivory/20 hover:border-gold-bright transition-colors"
+              className="lg:hidden inline-flex items-center justify-center h-11 w-11 rounded-full bg-ink/70 border border-ivory/30 text-ivory hover:border-gold-bright hover:text-gold-bright transition-colors backdrop-blur-sm"
             >
-              {open ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}
+              {open ? <X size={20} aria-hidden /> : <Menu size={20} aria-hidden />}
             </button>
           </div>
         </div>

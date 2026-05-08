@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, type ReactNode } from "react";
 import { LayoutDashboard, FileText, Image, MessageSquare, Settings, LogOut, Scissors } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { cn } from "@/lib/cn";
 
 const NAV_ITEMS = [
@@ -24,7 +25,7 @@ function AdminSidebar({ onNav }: { onNav?: () => void }) {
   };
 
   return (
-    <aside className="flex flex-col h-full bg-[#0b0b0c] border-r border-ivory/10">
+    <aside className="flex flex-col h-full bg-ink border-r border-ivory/10">
       <div className="px-6 py-5 border-b border-ivory/10 flex items-center gap-3">
         <Scissors size={16} className="text-gold-bright" aria-hidden />
         <span className="font-editorial text-xl tracking-wide text-ivory">GENIUS.W</span>
@@ -53,6 +54,10 @@ function AdminSidebar({ onNav }: { onNav?: () => void }) {
         })}
       </nav>
       <div className="px-3 pb-4 border-t border-ivory/10 pt-4">
+        <div className="flex items-center justify-between px-3 py-2 mb-1">
+          <span className="text-xs text-ivory/40 tracking-[0.15em] uppercase">Thème</span>
+          <ThemeToggle />
+        </div>
         <button
           onClick={handleLogout}
           className="w-full flex items-center gap-3 px-3 py-2.5 rounded text-sm text-ivory/60 hover:text-ivory hover:bg-ivory/5 transition-colors"
@@ -82,7 +87,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0d0d0e] text-ivory font-body flex">
+    <div className="min-h-screen bg-ink text-ivory font-body flex">
       {/* Sidebar desktop */}
       <div className="hidden lg:flex lg:flex-col lg:w-56 lg:fixed lg:inset-y-0">
         <AdminSidebar />
