@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
 import { Section } from "@/components/ui/section";
@@ -8,13 +9,14 @@ import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { LikeButton } from "@/components/blog/like-button";
 import { Comments } from "@/components/blog/comments";
 import { ArticleJsonLd } from "@/components/blog/article-jsonld";
-import { posts, findPost } from "@/lib/posts";
+import { getPosts, findPost } from "@/lib/posts.server";
 import { brand } from "@/lib/brand";
 import { getServerDict } from "@/lib/i18n/server";
+import { VideoEmbed } from "@/components/blog/video-embed";
 
 type Params = { slug: string };
 
-export const generateStaticParams = (): Params[] => posts.map((p) => ({ slug: p.slug }));
+export const generateStaticParams = (): Params[] => getPosts().map((p) => ({ slug: p.slug }));
 
 export const generateMetadata = async ({ params }: { params: Promise<Params> }): Promise<Metadata> => {
   const { slug } = await params;
@@ -29,8 +31,9 @@ export const generateMetadata = async ({ params }: { params: Promise<Params> }):
 };
 
 const adjacent = (slug: string) => {
-  const i = posts.findIndex((p) => p.slug === slug);
-  return { prev: posts[(i - 1 + posts.length) % posts.length], next: posts[(i + 1) % posts.length] };
+  const all = getPosts();
+  const i = all.findIndex((p) => p.slug === slug);
+  return { prev: all[(i - 1 + all.length) % all.length], next: all[(i + 1) % all.length] };
 };
 
 export default async function PostPage({ params }: { params: Promise<Params> }) {
@@ -66,9 +69,17 @@ export default async function PostPage({ params }: { params: Promise<Params> }) 
               </div>
             </Reveal>
           </div>
+          {post.coverUrl && (
+            <div className="container-edit relative aspect-video max-h-[60vh] overflow-hidden rounded-sm mt-8">
+              <Image src={post.coverUrl} alt={post.title} fill className="object-cover" priority />
+            </div>
+          )}
         </header>
         <Section>
           <div className="max-w-2xl mx-auto flex flex-col gap-8 text-lg leading-relaxed text-ivory/85">
+            {post.videoUrl && (
+              <VideoEmbed url={post.videoUrl} />
+            )}
             {post.body.map((p, i) => (
               <Reveal key={i} delay={i * 0.04}>
                 <p className="text-balance">{p}</p>

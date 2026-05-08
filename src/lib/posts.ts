@@ -7,6 +7,8 @@ export type Post = {
   read: string;
   body: readonly string[];
   palette: { from: string; to: string };
+  coverUrl?: string;
+  videoUrl?: string;
 };
 
 export const posts: readonly Post[] = [

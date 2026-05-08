@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Section } from "@/components/ui/section";
@@ -7,13 +8,13 @@ import { Reveal } from "@/components/ui/reveal";
 import { Motif } from "@/components/ui/motif";
 import { Button } from "@/components/ui/button";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
-import { portfolio, findLook } from "@/lib/portfolio";
+import { getPortfolio, findLook } from "@/lib/portfolio.server";
 import { brand } from "@/lib/brand";
 import { getServerDict } from "@/lib/i18n/server";
 
 type Params = { slug: string };
 
-export const generateStaticParams = (): Params[] => portfolio.map((l) => ({ slug: l.slug }));
+export const generateStaticParams = (): Params[] => getPortfolio().map((l) => ({ slug: l.slug }));
 
 export const generateMetadata = async ({ params }: { params: Promise<Params> }): Promise<Metadata> => {
   const { slug } = await params;
@@ -28,8 +29,9 @@ export const generateMetadata = async ({ params }: { params: Promise<Params> }):
 };
 
 const adjacent = (slug: string) => {
-  const i = portfolio.findIndex((l) => l.slug === slug);
-  return { prev: portfolio[(i - 1 + portfolio.length) % portfolio.length], next: portfolio[(i + 1) % portfolio.length] };
+  const all = getPortfolio();
+  const i = all.findIndex((l) => l.slug === slug);
+  return { prev: all[(i - 1 + all.length) % all.length], next: all[(i + 1) % all.length] };
 };
 
 export default async function LookPage({ params }: { params: Promise<Params> }) {
@@ -54,7 +56,11 @@ export default async function LookPage({ params }: { params: Promise<Params> }) 
         <Section contained={false}>
           <div className="container-edit grid lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8 relative aspect-[4/5] overflow-hidden rounded-sm border border-ivory/10">
-              <Motif motif={look.motif} from={look.palette.from} to={look.palette.to} accent={look.palette.accent} alt="" />
+              {look.imageUrl ? (
+                <Image src={look.imageUrl} alt={look.title} fill className="object-cover" sizes="(max-width:1024px) 100vw, 66vw" />
+              ) : (
+                <Motif motif={look.motif} from={look.palette.from} to={look.palette.to} accent={look.palette.accent} alt="" />
+              )}
             </div>
             <aside className="lg:col-span-4 flex flex-col gap-6">
               <dl className="grid grid-cols-2 gap-6 card-edit">

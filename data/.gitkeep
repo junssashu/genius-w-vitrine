@@ -1,0 +1,3 @@
+# Dynamic data directory
+# JSON files are auto-created from static TypeScript data on first run.
+# This directory is mounted as a Docker volume to persist CMS changes.

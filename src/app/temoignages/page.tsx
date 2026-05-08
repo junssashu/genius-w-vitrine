@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { TestimonialCard } from "@/components/testimonials/testimonial-card";
 import { CrossLinks } from "@/components/ui/cross-links";
-import { testimonials } from "@/lib/testimonials";
+import { getTestimonials } from "@/lib/testimonials.server";
 import { getServerDict } from "@/lib/i18n/server";
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -14,6 +14,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function TestimonialsPage() {
   const dict = await getServerDict();
+  const testimonials = getTestimonials();
   return (
     <>
       <PageHeader copy={dict.testimonials.page} />

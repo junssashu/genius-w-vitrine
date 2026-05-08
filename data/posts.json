@@ -1,0 +1,73 @@
+[
+  {
+    "slug": "atelier-haute-couture-au-cameroun",
+    "title": "Faire naître une maison de haute couture à Yaoundé",
+    "excerpt": "Notes d'atelier sur l'audace de coudre la haute couture loin des capitales européennes.",
+    "category": "Manifeste",
+    "date": "12 Avril 2026",
+    "read": "6 min",
+    "palette": {
+      "from": "#5a1a1f",
+      "to": "#0b0b0c"
+    },
+    "body": [
+      "Un atelier de haute couture en Afrique centrale, ce n'est pas une mode passagère. C'est un acte. C'est aussi un pari : celui de croire qu'une silhouette pensée à Yaoundé peut habiller le monde.",
+      "Chez GENIUS.W, nous tenons ce pari. Nos patrons sont coupés main, nos broderies tirées au fil d'or, nos tulles trempés dans des bains de teinture que nous mélangeons nous-mêmes. Rien n'est délégué à un atelier d'outre-mer.",
+      "L'idée n'est pas de prouver que nous savons faire « comme à Paris ». L'idée est de prouver que la haute couture parle aussi notre langue. Qu'elle peut se conjuguer en Bamiléké, en Béti, en Bassa — sans rien céder de sa rigueur.",
+      "Chaque pièce qui quitte l'atelier porte cette double exigence : la précision du geste, et la mémoire du lieu."
+    ]
+  },
+  {
+    "slug": "anatomie-dune-robe-de-defile",
+    "title": "Anatomie d'une robe de défilé : 320 heures de main",
+    "excerpt": "Le making-of de Lune Noire, robe bustier perlée signature de la collection FW 26.",
+    "category": "Coulisses",
+    "date": "28 Mars 2026",
+    "read": "9 min",
+    "palette": {
+      "from": "#0b0b0c",
+      "to": "#1a1430"
+    },
+    "body": [
+      "Tout commence par un croquis. Trois traits, parfois quatre, jetés sur du papier kraft un soir tard. La silhouette de Lune Noire est née comme ça : une intuition.",
+      "Puis vient le patronnage. 14 pièces de toile assemblées, ajustées, défaites, recommencées. Chaque couture est testée trois fois avant d'être validée.",
+      "Le tulle de soie noir est ensuite peint à la main avec des encres végétales. Il faut 11 jours pour que la teinture prenne uniformément.",
+      "Vient la broderie. 8400 perles posées une à une, à la lumière du jour. Trois brodeuses, six semaines.",
+      "Enfin, l'essayage. Un seul. Tout doit être juste du premier coup."
+    ]
+  },
+  {
+    "slug": "tisser-avec-lheritage-tikar",
+    "title": "Tisser avec l'héritage Tikar : la grammaire d'une cape",
+    "excerpt": "Comment les bronzes Tikar inspirent la broderie d'or de la pièce Or de Mfoundi.",
+    "category": "Inspiration",
+    "date": "15 Mars 2026",
+    "read": "5 min",
+    "palette": {
+      "from": "#5a3a1a",
+      "to": "#1a1a1c"
+    },
+    "body": [
+      "Les bronzes Tikar ne sont pas des objets. Ce sont des phrases. Chaque motif raconte une histoire — une lignée, une victoire, une saison.",
+      "Pour Or de Mfoundi, nous avons emprunté la grammaire — pas le vocabulaire. La cape ne reproduit aucun motif : elle s'inscrit dans la même façon de penser le geste répétitif comme une narration.",
+      "Le résultat est une pièce qui n'appartient à personne d'autre qu'à celle qui la porte, mais qui dialogue silencieusement avec deux siècles de mémoire."
+    ]
+  },
+  {
+    "slug": "le-sur-mesure-au-xxie-siecle",
+    "title": "Le sur-mesure au XXIᵉ siècle : un luxe ou une nécessité ?",
+    "excerpt": "Plaidoyer pour la pièce unique à l'heure de la fast-fashion algorithmique.",
+    "category": "Tribune",
+    "date": "02 Mars 2026",
+    "read": "7 min",
+    "palette": {
+      "from": "#7a5a3a",
+      "to": "#2b1d1f"
+    },
+    "body": [
+      "La fast-fashion a inventé la pièce qui ne dure pas. Le sur-mesure invente la pièce qui ne meurt jamais.",
+      "C'est une question écologique, autant qu'esthétique. Une robe coupée pour vous se porte vingt ans, se transmet, se retouche. Une robe coupée pour personne se jette en six mois.",
+      "Le luxe contemporain n'est plus dans la marque visible — il est dans la patience invisible."
+    ]
+  }
+]

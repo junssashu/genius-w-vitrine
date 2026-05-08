@@ -6,11 +6,15 @@ import { PostCard } from "@/components/blog/post-card";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { useT } from "@/components/providers/preferences-context";
-import { posts } from "@/lib/posts";
+import { posts as staticPosts } from "@/lib/posts";
+import type { Post } from "@/lib/posts";
 
 const PREVIEW = 3;
 
-export const BlogPreview = () => {
+type Props = { posts?: Post[] };
+
+export const BlogPreview = ({ posts: postsProp }: Props) => {
+  const posts = postsProp ?? staticPosts;
   const t = useT();
   const c = t.blog.preview;
   return (
@@ -24,7 +28,7 @@ export const BlogPreview = () => {
         <Reveal><Button href="/blog" variant="ghost">{t.cta.allArticles}</Button></Reveal>
       </div>
       <ul className="grid md:grid-cols-3 gap-8 items-stretch">
-        {posts.slice(0, PREVIEW).map((p, i) => (
+        {posts.slice(0, PREVIEW).map((p: Post, i: number) => (
           <Reveal as="li" key={p.slug} delay={i * 0.08} className="h-full">
             <PostCard post={p} index={i} />
           </Reveal>

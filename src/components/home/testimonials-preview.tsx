@@ -5,11 +5,15 @@ import { SectionHeader } from "@/components/ui/section-header";
 import { Reveal } from "@/components/ui/reveal";
 import { TestimonialCard } from "@/components/testimonials/testimonial-card";
 import { useT } from "@/components/providers/preferences-context";
-import { testimonials } from "@/lib/testimonials";
+import { testimonials as staticTestimonials } from "@/lib/testimonials";
+import type { Testimonial } from "@/lib/testimonials";
 
 const PREVIEW = 3;
 
-export const TestimonialsPreview = () => {
+type Props = { testimonials?: Testimonial[] };
+
+export const TestimonialsPreview = ({ testimonials: tProp }: Props) => {
+  const testimonials = tProp ?? staticTestimonials;
   const t = useT();
   const c = t.testimonials.preview;
   return (

@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/ui/page-header";
 import { Section } from "@/components/ui/section";
 import { LookGrid } from "@/components/portfolio/look-grid";
 import { CrossLinks } from "@/components/ui/cross-links";
-import { portfolio } from "@/lib/portfolio";
+import { getPortfolio } from "@/lib/portfolio.server";
 import { getServerDict } from "@/lib/i18n/server";
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -13,6 +13,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function PortfolioPage() {
   const dict = await getServerDict();
+  const portfolio = getPortfolio();
   return (
     <>
       <PageHeader copy={dict.portfolio.page} />

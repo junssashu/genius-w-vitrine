@@ -5,7 +5,7 @@ import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { CrossLinks } from "@/components/ui/cross-links";
-import { services } from "@/lib/services";
+import { getServices } from "@/lib/services.server";
 import { getServerDict } from "@/lib/i18n/server";
 
 export const generateMetadata = async (): Promise<Metadata> => {
@@ -15,6 +15,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
 export default async function ServicesPage() {
   const dict = await getServerDict();
+  const services = getServices();
   return (
     <>
       <PageHeader copy={dict.services.page} />

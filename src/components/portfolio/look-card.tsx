@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { ProgressiveMotif } from "@/components/ui/progressive-motif";
 import { TiltCard } from "@/components/ui/tilt-card";
@@ -24,7 +25,17 @@ export const LookCard = ({ look, index, aspect = "tall" }: Props) => {
       <TiltCard className="relative overflow-hidden rounded-sm border border-ivory/10">
         <article className={cn("img-zoom relative w-full", aspect === "tall" ? "aspect-[3/4]" : "aspect-square")}>
           <figure className="img-inner absolute inset-0 m-0" aria-hidden>
-            <ProgressiveMotif motif={look.motif} from={look.palette.from} to={look.palette.to} accent={look.palette.accent} alt={visual} />
+            {look.imageUrl ? (
+              <Image
+                src={look.imageUrl}
+                alt={visual}
+                fill
+                className="object-cover"
+                sizes="(max-width:640px) 72vw, (max-width:1024px) 44vw, 28vw"
+              />
+            ) : (
+              <ProgressiveMotif motif={look.motif} from={look.palette.from} to={look.palette.to} accent={look.palette.accent} alt={visual} />
+            )}
           </figure>
           <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-[#0b0b0c]/80 via-[#0b0b0c]/0 to-transparent" />
           <header className="absolute top-4 left-4 right-4 flex items-start justify-between text-[0.7rem] tracking-[0.22em] uppercase on-dark opacity-85">

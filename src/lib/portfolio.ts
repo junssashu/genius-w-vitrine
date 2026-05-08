@@ -8,6 +8,7 @@ export type Look = {
   description: string;
   palette: { from: string; to: string; accent: string };
   motif: Motif;
+  imageUrl?: string;
 };
 
 export const portfolio: readonly Look[] = [

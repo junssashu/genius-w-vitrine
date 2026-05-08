@@ -1,0 +1,54 @@
+[
+  {
+    "slug": "haute-couture",
+    "num": "I",
+    "title": "Haute Couture",
+    "subtitle": "Pièces uniques · sur-mesure",
+    "description": "Chaque silhouette naît d'un dialogue. Patronnage main, étoffes nobles, finitions invisibles — la robe d'apparat qui vous ressemble, signée à la maille.",
+    "features": [
+      "Patronage 100% sur-mesure",
+      "3 essayages minimum",
+      "Tissus rares & broderies main",
+      "Livraison en boîte signature"
+    ]
+  },
+  {
+    "slug": "couture-mixte",
+    "num": "II",
+    "title": "Couture Mixte",
+    "subtitle": "Tradition & modernité",
+    "description": "Le pont entre l'héritage et l'audace. Des coupes nettes ourlées d'inspiration camerounaise, pensées pour l'homme et la femme contemporains.",
+    "features": [
+      "Vestiaires unisexes",
+      "Mélange tissus européens & wax",
+      "Pièces capsules limitées",
+      "Retouches à vie"
+    ]
+  },
+  {
+    "slug": "pret-a-porter",
+    "num": "III",
+    "title": "Prêt-à-Porter",
+    "subtitle": "Collections de saison",
+    "description": "L'élégance du quotidien. Des pièces signature en série limitée, coupées à Yaoundé dans des matières sélectionnées avec exigence.",
+    "features": [
+      "Séries limitées numérotées",
+      "Tailles XS — XXL",
+      "Lookbooks saisonniers",
+      "Échange & retour 14 jours"
+    ]
+  },
+  {
+    "slug": "accessoires",
+    "num": "IV",
+    "title": "Accessoires",
+    "subtitle": "Pièces de signature",
+    "description": "Bijoux textiles, chapeaux, sacs structurés. Les détails qui transforment une silhouette en histoire.",
+    "features": [
+      "Cuir tanné main",
+      "Métalleries laiton brossé",
+      "Édition numérotée",
+      "Personnalisation au monogramme"
+    ]
+  }
+]

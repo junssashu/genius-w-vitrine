@@ -6,13 +6,16 @@ import { LookGrid } from "@/components/portfolio/look-grid";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/ui/reveal";
 import { useT } from "@/components/providers/preferences-context";
-import { portfolio } from "@/lib/portfolio";
+import { portfolio as staticPortfolio, type Look } from "@/lib/portfolio";
 
 const PREVIEW_COUNT = 6;
 
-export const PortfolioPreview = () => {
+type Props = { looks?: Look[] };
+
+export const PortfolioPreview = ({ looks: looksProp }: Props) => {
   const t = useT();
   const c = t.portfolio.preview;
+  const portfolio = looksProp ?? staticPortfolio;
   return (
     <Section ariaLabel={t.cross.portfolio.title}>
       <div className="flex flex-wrap items-end justify-between gap-6 mb-14">

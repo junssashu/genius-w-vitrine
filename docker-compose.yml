@@ -1,0 +1,16 @@
+services:
+  web:
+    build: .
+    container_name: genius-w-vitrine
+    restart: unless-stopped
+    ports:
+      - "3002:3000"
+    environment:
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+    volumes:
+      - genius_data:/app/data
+      - genius_uploads:/app/public/uploads
+
+volumes:
+  genius_data:
+  genius_uploads:
